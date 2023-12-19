@@ -83,8 +83,7 @@ def part2():
 
     secondBytesPair = s.recvfrom(BUFFER)
 
-    res_code = int(secondBytesPair[0].decode())
-    if res_code == 1:
+    if (res_code := int(secondBytesPair[0].decode())) == 1:
         print("Server has successfully received the message!")
         endTime = time.time()
         duration = endTime - startTime
